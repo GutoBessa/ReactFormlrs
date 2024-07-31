@@ -1,6 +1,15 @@
 import "./MyForm.css";
-
+import { useState } from "react";
 const MyForm = () => {
+  /* 3 - Gerenciamento de Dados */
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+
+  const atualName = (e) => {
+    setName("e.target.value");
+  };
+
+  console.log(name);
   return (
     <div>
       {" "}
@@ -8,7 +17,12 @@ const MyForm = () => {
       <form>
         <div>
           <label htmlFor="name">Nome:</label>
-          <input type="text" name="name" placeholder="Digite seu nome aqui" />
+          <input
+            type="text"
+            name="name"
+            placeholder="Digite seu nome aqui"
+            onChange={atualName}
+          />
         </div>
         {/* 2 - label envolvendo input */}
         <label>
